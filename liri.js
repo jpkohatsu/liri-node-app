@@ -1,25 +1,32 @@
-var Twitter = require('twitter');
+// var Twitter = require ('twitter');
+// var Spotify = require('node-spotify-api');
+// var request = require('request');
 
-var Spotify = require('node-spotify-api');
-
-var request = require('request');
+var TwitterController = require('./modules/TwitterController');
+var SpotifyController = require('./modules/SpotifyController');
+var RequestController = require('./modules/RequestController');
 
 var keys = require('./keys');
 
-console.log(keys.twitter_token_secret);
+var Twitter = new TwitterController(keys);
+var Spotify = new SpotifyController(keys);
 
-var client = new Twitter({
-  consumer_key: keys.twitter_key,
-  consumer_secret: keys.twitter_secret,
-  access_token_key: keys.twitter_token,
-  access_token_secret: keys.twitter_token_secret
-});
 
-var params = {screen_name: 'liri_man'};
-client.get('statuses/user_timeline', params, function(error, tweets, response) {
-  if (!error) {
-    console.log(tweets);
-  }	else {
-  	console.log(error);
-  }
-});
+var command = process.argv[2];
+
+switch(command) {
+	case 'my-tweets':
+		Twitter.getTweets();
+		break;
+	case 'spotify-this-song':
+		Spotify.search(process.argv[3]);
+		break;
+	case 'movie-this':
+		Request.
+		break;
+	case 'do-what-it-says':
+		
+		break;
+};
+
+

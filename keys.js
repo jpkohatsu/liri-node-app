@@ -5,6 +5,5 @@ module.exports = {
   twitter_token_secret: 'HvNWS7fsIQftEJTCFB2zUEEAWRky7GvSTCie93a87SGtL',
   twitter_key: 'OueOl8XK9vBNFlcZ29oz2Tqmf',
   twitter_secret: 'BFmzjYv0Qv1exXm0cGkRgswBeEwkQAZbUfvxE0QluNt4uciXDs',
-
-}
+};
 
